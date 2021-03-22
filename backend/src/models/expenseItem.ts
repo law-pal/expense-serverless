@@ -1,4 +1,4 @@
-export interface expense {
+export interface ExpenseItem {
    userId: string
    purchaseId: string
    createdAt: string

@@ -1,7 +1,7 @@
 /**
  * Fields in a request to update a single EXPENSE item.
  */
-export interface UpdateTodoRequest {
+export interface UpdateExpenseRequest {
    name: string
    date: string
    amount: number
