@@ -4,7 +4,7 @@ import { CreateExpenseRequest } from '../../requests/createExpenseRequest'
 import { createExpense } from '../../distribution/expenseDistributions'
 import { createLogger } from '../../utils/logger'
 
-const logger = createLogger('createTodo')
+const logger = createLogger('createExpense')
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const newExpenses: CreateExpenseRequest = JSON.parse(event.body);

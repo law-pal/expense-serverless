@@ -28,11 +28,11 @@ export default class ExpenseAccess {
 
 
   // updates a expense
-  async updateExpense(purchaseId, userId, updatedExpense) {
+  async updateExpense(expenseId, userId, updatedExpense) {
     await this.documentClient.update({
       TableName: this.expenseTable,
       Key: {
-        purchaseId,
+        expenseId,
         userId
       },
       UpdateExpression: 'set #name = :n, #date = :date, #amount = :a',
@@ -51,11 +51,11 @@ export default class ExpenseAccess {
 
 
   // deletes an expense
-  async deleteExpense(purchaseId, userId) {
+  async deleteExpense(expenseId, userId) {
     await this.documentClient.delete({
       TableName: this.expenseTable,
       Key: {
-        purchaseId,
+        expenseId,
         userId
       }
     }).promise();
@@ -63,11 +63,11 @@ export default class ExpenseAccess {
 
 
   // get an expense
-  async getExpense(purchaseId, userId) {
+  async getExpense(expenseId, userId) {
     const result = await this.documentClient.get({
       TableName: this.expenseTable,
       Key: {
-        purchaseId,
+        expenseId,
         userId
       }
     }).promise();

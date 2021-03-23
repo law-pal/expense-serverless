@@ -13,18 +13,16 @@ const logger = createLogger('expenses')
 const expenseStorage = new ExpenseStore();
 const expenseEntryPoint = new ExpenseAccess();
 
-export async function createExpense(event: APIGatewayProxyEvent,createExpenseRequest: CreateExpenseRequest): Promise<ExpenseItem> {
-  const purchaseId = uuid.v4();
+export async function createExpense(event: APIGatewayProxyEvent, createExpenseRequest: CreateExpenseRequest): Promise<ExpenseItem> {
+  const expenseId = uuid.v4();
   const userId = getUserId(event);
   const createdAt = new Date(Date.now()).toISOString();
-  const date = new Date(Date.now()).toDateString();
 
   const expenseItem = {
     userId,
-    purchaseId,
+    expenseId,
     createdAt,
-    date,
-    attachmentUrl: `https://${expenseStorage.getBucketName()}.s3.amazonaws.com/${purchaseId}`,
+    attachmentUrl: `https://${expenseStorage.getBucketName()}.s3.amazonaws.com/${expenseId}`,
     ...createExpenseRequest
   };
   await expenseEntryPoint.addExpense(expenseItem);

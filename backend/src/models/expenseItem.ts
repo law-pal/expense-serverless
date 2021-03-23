@@ -1,6 +1,6 @@
 export interface ExpenseItem {
    userId: string
-   purchaseId: string
+   expenseId: string
    createdAt: string
    name: string
    date: string
