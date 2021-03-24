@@ -1,6 +1,6 @@
 # Expense-serverless
 
-This application implements a simple Expense-Tracker application using AWS Lambda and Serverless framework.
+This application implements a simple Expense-Tracker application using AWS Lambda and Serverless framework, The idea is that the user can login to his/her profile to keep track of their expenses by adding the name and the ammount they spent, users will have the option to upload a file e.g receipts, images, etc, Each user is authenticated and will have it's own profile.
 
 # Functionality of the application
 
