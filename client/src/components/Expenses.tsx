@@ -5,8 +5,6 @@ import * as React from 'react'
 import {
   Button,
   Form,
-  Label,
-  Checkbox,
   Divider,
   Grid,
   Header,
